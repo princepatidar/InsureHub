@@ -72,6 +72,8 @@ group :test do
 end
 
 gem 'activeadmin'
+gem 'arctic_admin'
 gem 'devise'
 gem 'graphql'
 gem "graphiql-rails", group: :development
+gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
