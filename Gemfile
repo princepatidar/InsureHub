@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem 'activeadmin'
+gem 'devise'
+gem 'graphql'
+gem "graphiql-rails", group: :development
