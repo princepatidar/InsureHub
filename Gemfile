@@ -73,6 +73,7 @@ end
 
 gem 'activeadmin'
 gem 'arctic_admin'
+gem 'bullet'
 gem 'countries'
 gem 'devise'
 gem 'graphql'
