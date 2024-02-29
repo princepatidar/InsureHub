@@ -7,6 +7,7 @@ class CreateCategories < ActiveRecord::Migration[7.0]
       t.string :bg_color, default: '#151828'
       t.string :text_colour, default: '#ffff'
       t.references :country, index: true
+      t.integer :status, default: 1
       t.timestamps
     end
   end

@@ -14,3 +14,4 @@ if Rails.env.development?
 end
 
 BuildCountries.call
+BuildCategories.call
