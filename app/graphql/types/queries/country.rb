@@ -14,7 +14,7 @@ module Types::Queries::Country
   end
 
   def countries
-    Country.includes(service_provider_logo_attachment: :blob).active
+    Country.includes(:categories, service_provider_logo_attachment: :blob).active
   end
 
   def country(id:)
