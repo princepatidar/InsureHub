@@ -73,7 +73,10 @@ end
 
 gem 'activeadmin'
 gem 'arctic_admin'
+gem 'bullet'
+gem 'countries'
 gem 'devise'
 gem 'graphql'
 gem "graphiql-rails", group: :development
+gem 'ransack'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
