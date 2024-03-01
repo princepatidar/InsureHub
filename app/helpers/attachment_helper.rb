@@ -7,4 +7,11 @@ module AttachmentHelper
       'No logo attached'
     end
   end
+
+  def attachment_attributes(object)
+    fields = { as: :file, input_html: { accept: 'image/*' } }
+    return fields unless  object.service_provider_logo.attached?
+
+    fields.merge(hint: image_tag(object.service_provider_logo, width: 100, height: 100))
+  end
 end
