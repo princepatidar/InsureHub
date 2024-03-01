@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-include AttachmentHelper
 ActiveAdmin.register Category do
-  permit_params :min_price, :max_price, :status, :bg_color, :text_colour
+  permit_params :min_price, :max_price, :status, :bg_color, :text_colour, :logo
 
   index do
     column :country
@@ -20,9 +19,9 @@ ActiveAdmin.register Category do
       row :min_price
       row :max_price
       row :logo do |resource|
-        link_to("#{resource.name}'s logo", resource.logo, target: '_blank')
+        attached_logo(resource.logo, resource.name)
       end
-      row 'Status'do |category|
+      row 'Status' do |category|
         status_tag(category.active? ? 'Active' : 'Inactive', class: category.active? ? 'green' : 'red')
       end
     end
@@ -37,7 +36,7 @@ ActiveAdmin.register Category do
       f.input :max_price
       f.input :bg_color
       f.input :text_colour
-      f.input :logo, as: :file, input_html: { accept: 'image/svg+xml' }
+      f.input :logo, as: :file, input_html: { accept: 'image/*' }
       f.input :status
     end
     f.actions
@@ -49,9 +48,13 @@ ActiveAdmin.register Category do
     end
   end
 
-  filter :country, as: :select, collection: -> { Country.all.pluck(:name, :id) }
+  action_item 'Back', only: :show do
+    link_to('Back', admin_categories_path)
+  end
+
+  filter :country
   filter :name
-  filter :status
+  filter :status, ActiveAdminCommon.filter_enum_attributes(Category.statuses)
 
   actions :all, except: :destroy
 end

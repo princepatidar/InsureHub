@@ -78,5 +78,6 @@ gem 'countries'
 gem 'devise'
 gem 'graphql'
 gem "graphiql-rails", group: :development
+gem 'jquery-rails'
 gem 'ransack'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'

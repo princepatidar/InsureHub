@@ -1,9 +1,11 @@
 class Country < ApplicationRecord
-
   enum status: %i[inactive active]
   enum tax_type: %w[VAT GST]
+
   has_one_attached :service_provider_logo
+
   has_many :categories, dependent: :destroy
+  has_many :warranties, dependent: :destroy
 
   def self.ransackable_attributes(auth_object = nil)
     %w[name currency status email]

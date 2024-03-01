@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-include AttachmentHelper
 ActiveAdmin.register Country do
   permit_params :country_name, :currency, :currency_symbol, :status, :tax_type, :tax_value, :phone_number, :address,
                 :email, :service_provider_logo, :service_provider_name, :policy_description, :invoice_prefix
@@ -70,7 +69,7 @@ ActiveAdmin.register Country do
 
   filter :name
   filter :currency
-  filter :status
+  filter :status, ActiveAdminCommon.filter_enum_attributes(Country.statuses)
   filter :email
 
   actions :index, :show, :edit, :update
