@@ -356,5 +356,8 @@ ActiveAdmin.setup do |config|
   config.meta_tags = meta_tags_options
   config.meta_tags_for_logged_out_pages = meta_tags_options
 
+  config.register_stylesheet 'admin.css'
   config.register_javascript 'warranty.js'
+  config.register_javascript 'category.js'
+  config.register_javascript 'customise_quill.js'
 end

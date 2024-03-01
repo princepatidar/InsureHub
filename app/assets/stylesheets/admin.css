@@ -1,0 +1,8 @@
+.error-message {
+  color: red;
+  margin-left: 25%
+}
+
+.quill-editor--active {
+  width: 50% !important;
+}

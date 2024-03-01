@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.ql-snow .ql-picker-options .ql-picker-item {
+  font-family: attr(data-value);
+  &::before {
+    content: attr(data-value) !important;
+  }
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+  content: attr(data-value) !important;
+}
+
+.ql-editor .ql-font span[data-label=manrope]::before {
+  font-family: "Manrope", sans-serif;
+}
+
+.ql-font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+.ql-font-inter {
+  font-family: 'Inter', sans-serif;
+}
