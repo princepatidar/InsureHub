@@ -72,6 +72,7 @@ group :test do
 end
 
 gem 'activeadmin'
+gem 'activeadmin_quill_editor'
 gem 'arctic_admin'
 gem 'bullet'
 gem 'countries'
