@@ -4,7 +4,10 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Warranty App"
+  config.site_title = 'InsureHub'
+  config.namespace :admin do |admin|
+    admin.download_links = [:csv] # Now, it will only show PDF option.
+  end
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -141,7 +144,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -334,7 +337,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  # config.footer = 'my custom footer text'
+  config.footer = 'InsureHub'
 
   # == Sorting
   #
@@ -352,4 +355,6 @@ ActiveAdmin.setup do |config|
   meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
   config.meta_tags = meta_tags_options
   config.meta_tags_for_logged_out_pages = meta_tags_options
+
+  config.register_javascript 'warranty.js'
 end
