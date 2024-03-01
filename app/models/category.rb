@@ -9,6 +9,10 @@ class Category < ApplicationRecord
 
   belongs_to :country
 
+  has_many :warranty_categories
+  has_many :warranties, through: :warranty_categories
+  accepts_nested_attributes_for :warranty_categories, update_only: true, allow_destroy: true
+
   def self.ransackable_attributes(auth_object = nil)
     %w[name status country_id]
   end
