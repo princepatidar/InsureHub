@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    country:
+      not_found: 'Country not found'
+    category:
+      not_found: 'Category not found'

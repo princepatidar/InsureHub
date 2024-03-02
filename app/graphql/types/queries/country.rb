@@ -18,6 +18,8 @@ module Types::Queries::Country
   end
 
   def country(id:)
-    Country.find(id)
+    Country.active.find(id)
+  rescue StandardError
+    raise GraphQL::ExecutionError, I18n.t('errors.country.not_found')
   end
 end

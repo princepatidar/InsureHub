@@ -9,15 +9,16 @@ class Category < ApplicationRecord
 
   belongs_to :country
 
-  has_many :warranty_categories
+  has_many :warranty_categories, dependent: :destroy
   has_many :warranties, through: :warranty_categories
+  has_many :stores, dependent: :destroy
   accepts_nested_attributes_for :warranty_categories, update_only: true, allow_destroy: true
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[name status country_id]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     ['country']
   end
 

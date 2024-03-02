@@ -12,5 +12,10 @@ module Types
     field :status, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :stores, [Types::StoreType], null: true
+
+    def stores
+      object.stores.active
+    end
   end
 end
