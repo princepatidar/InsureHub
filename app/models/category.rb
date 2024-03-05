@@ -12,6 +12,7 @@ class Category < ApplicationRecord
   has_many :warranty_categories, dependent: :destroy
   has_many :warranties, through: :warranty_categories
   has_many :stores, dependent: :destroy
+  has_many :items, dependent: :destroy
   accepts_nested_attributes_for :warranty_categories, update_only: true, allow_destroy: true
 
   def self.ransackable_attributes(_auth_object = nil)

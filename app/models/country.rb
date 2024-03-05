@@ -7,6 +7,7 @@ class Country < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :warranties, dependent: :destroy
   has_many :stores, dependent: :destroy
+  has_many :items, dependent: :destroy
 
   def self.ransackable_attributes(_auth_object = nil)
     %w[name currency status email]
