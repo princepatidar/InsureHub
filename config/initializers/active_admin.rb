@@ -358,6 +358,7 @@ ActiveAdmin.setup do |config|
 
   config.register_stylesheet 'admin.css'
   config.register_javascript 'warranty.js'
+  config.register_javascript 'item.js'
   config.register_javascript 'category.js'
   config.register_javascript 'customise_quill.js'
 end

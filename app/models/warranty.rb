@@ -16,6 +16,8 @@ class Warranty < ApplicationRecord
   belongs_to :extended_warranty, class_name: 'Warranty', optional: true
   has_many :warranty_categories, dependent: :destroy
   has_many :categories, through: :warranty_categories
+  has_many :item_warranties, dependent: :destroy
+  has_many :items, through: :item_warranties
 
   def self.ransackable_attributes(_auth_object = nil)
     %w[name status plan country_id]
