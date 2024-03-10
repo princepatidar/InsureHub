@@ -23,6 +23,11 @@ class Category < ApplicationRecord
     ['country']
   end
 
+  def all_stores
+    other_store = Store.new(id: -1, name: 'Other', country_id: country_id, category_id: id)
+    stores.active.to_a.push(other_store)
+  end
+
   private
 
   def min_price_cannot_be_greater_than_max_price

@@ -4,6 +4,8 @@ module Types
   class QueryType < Types::BaseObject
     include Types::Queries::Country
     include Types::Queries::Category
+    include Types::Queries::Store
+    include Types::Queries::Item
 
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
