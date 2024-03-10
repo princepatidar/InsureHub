@@ -13,9 +13,14 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :stores, [Types::StoreType], null: true
+    field :items, [Types::ItemType], null: true
 
     def stores
-      object.stores.active
+      object.all_stores
+    end
+
+    def items
+      object.items.active
     end
   end
 end
