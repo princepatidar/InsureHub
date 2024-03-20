@@ -80,5 +80,8 @@ gem 'devise'
 gem 'graphql'
 gem "graphiql-rails", group: :development
 gem 'jquery-rails'
+gem "omniauth"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'ransack'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
