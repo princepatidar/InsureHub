@@ -27,6 +27,10 @@ class Item < ApplicationRecord
     []
   end
 
+  def warranty_available?(time_interval, purchase_date)
+    purchase_date.to_date >= Date.today - time_interval.month
+  end
+
   private
 
   def update_category

@@ -6,6 +6,7 @@ module Types
     include Types::Queries::Category
     include Types::Queries::Store
     include Types::Queries::Item
+    include Types::Queries::Warranty
 
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
