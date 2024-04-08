@@ -28,6 +28,10 @@ class Category < ApplicationRecord
     stores.active.to_a.push(other_store)
   end
 
+  def price_exceeds?(item_price)
+    item_price >= min_price && item_price <= max_price
+  end
+
   private
 
   def min_price_cannot_be_greater_than_max_price
