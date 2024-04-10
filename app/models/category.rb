@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Category < ApplicationRecord
-  enum status: %i[inactive active]
+  enum status: { inactive: 0, active: 1 }
 
   validates :min_price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :max_price, presence: true, numericality: { greater_than_or_equal_to: 0 }

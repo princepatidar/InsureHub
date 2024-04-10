@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Warranty < ApplicationRecord
-  enum status: %i[inactive active]
-  enum plan: %i[basic accidental extended combo]
+  enum status: { inactive: 0, active: 1 }
+  enum plan: { basic: 0, accidental: 1, extended: 2, combo: 3 }
 
   validates :name, presence: true
   validates :duration, numericality: { greater_than: 0 }, unless: -> { combo? }

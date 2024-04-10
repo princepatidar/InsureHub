@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Store < ApplicationRecord
-  enum status: %i[inactive active]
+  enum status: { inactive: 0, active: 1 }
 
-  validates_presence_of :name
+  validates :name, presence: true
   belongs_to :country
   belongs_to :category
   before_save :update_category
