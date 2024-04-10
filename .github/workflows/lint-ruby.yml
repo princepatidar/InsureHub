@@ -1,0 +1,22 @@
+name: Lint Ruby
+
+on: [push]
+
+jobs:
+  lint-ruby:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup ruby (and run bundle install)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.1
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Rubocop
+        run: bundle exec rubocop --parallel
+
+      - name: Brakeman
+        run: bundle exec brakeman -w3 --no-progress
