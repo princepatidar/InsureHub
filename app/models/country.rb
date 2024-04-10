@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Country < ApplicationRecord
-  enum status: %i[inactive active]
-  enum tax_type: %w[VAT GST]
+  enum status: { inactive: 0, active: 1 }
+  enum tax_type: { 'VAT' => 0, 'GST' => 1 }
 
   has_one_attached :service_provider_logo
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Item < ApplicationRecord
-  enum status: %i[inactive active]
+  enum status: { inactive: 0, active: 1 }
 
-  validates_presence_of :depreciation_rate, :name
+  validates :depreciation_rate, :name, presence: true
   validates :depreciation_rate, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
 
   before_save :update_category
@@ -22,7 +22,7 @@ class Item < ApplicationRecord
   end
 
   def warranty_available?(time_interval, purchase_date)
-    purchase_date.to_date >= Date.today - time_interval.month
+    purchase_date.to_date >= Time.zone.today - time_interval.month
   end
 
   private

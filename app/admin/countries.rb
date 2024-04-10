@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-include AttachmentHelper
 ActiveAdmin.register Country do
+  include AttachmentHelper
   permit_params :country_name, :currency, :currency_symbol, :status, :tax_type, :tax_value, :phone_number, :address,
                 :email, :service_provider_logo, :service_provider_name, :policy_description, :invoice_prefix
 
@@ -39,7 +39,7 @@ ActiveAdmin.register Country do
       row :email
       row(:address, class: 'truncate')
       row "Country's Logo" do |resource|
-        link_to("#{resource.name}'s logo", resource.logo, target: '_blank')
+        link_to("#{resource.name}'s logo", resource.logo, target: '_blank', rel: 'noopener')
       end
       row :service_provider_name
       row :arabic_service_provider_name
