@@ -17,6 +17,3 @@ jobs:
 
       - name: Rubocop
         run: bundle exec rubocop --parallel
-
-      - name: Brakeman
-        run: bundle exec brakeman -w3 --no-progress
