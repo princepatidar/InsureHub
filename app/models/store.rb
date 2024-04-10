@@ -6,14 +6,6 @@ class Store < ApplicationRecord
   belongs_to :category
   before_save :update_category
 
-  def self.ransackable_attributes(_auth_object = nil)
-    %w[name status country_id category_id]
-  end
-
-  def self.ransackable_associations(_auth_object = nil)
-    %w[country category]
-  end
-
   private
 
   def update_category

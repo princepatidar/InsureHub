@@ -19,14 +19,6 @@ class Warranty < ApplicationRecord
   has_many :item_warranties, dependent: :destroy
   has_many :items, through: :item_warranties
 
-  def self.ransackable_attributes(_auth_object = nil)
-    %w[name status plan country_id]
-  end
-
-  def self.ransackable_associations(_auth_object = nil)
-    ['country']
-  end
-
   def self.combo_warranties(country_id)
     country = Country.find(country_id)
 
