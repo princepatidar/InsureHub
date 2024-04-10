@@ -12,7 +12,7 @@ jobs:
       - name: Setup ruby (and run bundle install)
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.1
+          ruby-version: 3.0.0
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Rubocop
