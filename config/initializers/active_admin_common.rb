@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveAdminCommon
   class << self
     def filter_enum_attributes(data)

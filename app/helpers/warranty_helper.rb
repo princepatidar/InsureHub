@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WarrantyHelper
   def warranty_attributes(object)
     object.persisted? ? disable_input : {}

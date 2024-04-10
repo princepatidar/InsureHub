@@ -9,7 +9,9 @@ ActiveAdmin.register Category do
     column :name
     column :min_price
     column :max_price
-    column('Status') { |category| status_tag(category.active? ? 'Active' : 'Inactive', class: category.active? ? 'green' : 'red') }
+    column('Status') do |category|
+      status_tag(category.active? ? 'Active' : 'Inactive', class: category.active? ? 'green' : 'red')
+    end
     actions
   end
 
@@ -40,7 +42,8 @@ ActiveAdmin.register Category do
       f.input :logo, as: :file, input_html: { accept: 'image/*' }
       f.input :status
       warranties = Warranty.where(country_id: object.country_id).pluck(:name, :id)
-      f.has_many :warranty_categories, heading: 'Warranties', new_record: 'Add New Warranty', allow_destroy: true do |wc|
+      f.has_many :warranty_categories, heading: 'Warranties', new_record: 'Add New Warranty',
+                                       allow_destroy: true do |wc|
         wc.input :warranty, as: :select, input_html: { class: 'warranty_dropdown' },
                             collection: warranties,
                             include_blank: 'Select Warranty'
@@ -67,7 +70,8 @@ ActiveAdmin.register Category do
 
     def find_resource
       if %w[edit update].include?(params[:action])
-        scoped_collection.includes(warranty_categories: { warranty: {}, plan_details_attachment: :blob }).find(params[:id])
+        scoped_collection.includes(warranty_categories: { warranty: {},
+                                                          plan_details_attachment: :blob }).find(params[:id])
       else
         scoped_collection.find(params[:id])
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BuildCategories
   class << self
     def call

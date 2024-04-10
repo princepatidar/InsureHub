@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CountryHelper
   def get_country(object)
     return { input_html: { disabled: true } } if object.persisted?
