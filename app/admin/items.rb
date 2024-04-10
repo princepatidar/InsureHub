@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Item do
   permit_params :name, :depreciation_rate, :status, :country_id, :category_id, :is_renewable, warranty_ids: []
 

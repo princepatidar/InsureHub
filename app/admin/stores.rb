@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Store do
   permit_params :name, :country_id, :category_id, :status
 
@@ -6,7 +8,9 @@ ActiveAdmin.register Store do
     column :country
     column :category
     column :name
-    column('Status') { |country| status_tag(country.active? ? 'Active' : 'Inactive', class: country.active? ? 'green' : 'red') }
+    column('Status') do |country|
+      status_tag(country.active? ? 'Active' : 'Inactive', class: country.active? ? 'green' : 'red')
+    end
     actions
   end
 

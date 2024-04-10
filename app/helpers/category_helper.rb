@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CategoryHelper
   def get_category(object)
     collection = CATEGORIES.map.with_index { |c, idx| [c, idx] }

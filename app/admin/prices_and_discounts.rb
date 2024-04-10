@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register ItemWarranty, as: 'PricesAndDiscounts' do
   menu label: 'Prices And Discounts'
   permit_params :warranty_price_percent, :discount_percent, :discount_start_date, :discount_end_date

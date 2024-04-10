@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Country < ApplicationRecord
   enum status: %i[inactive active]
   enum tax_type: %w[VAT GST]

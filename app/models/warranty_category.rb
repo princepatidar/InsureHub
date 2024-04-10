@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WarrantyCategory < ApplicationRecord
   validates_presence_of :description, :plan_details
 

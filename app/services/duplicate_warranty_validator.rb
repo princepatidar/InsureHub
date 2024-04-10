@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DuplicateWarrantyValidator
   def initialize(params)
     @params = params

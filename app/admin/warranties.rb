@@ -8,7 +8,9 @@ ActiveAdmin.register Warranty do
     column :country
     column :name
     column('Plan') { |warranty| warranty.plan.capitalize }
-    column('Status') { |warranty| status_tag(warranty.active? ? 'Active' : 'Inactive', class: warranty.active? ? 'green' : 'red') }
+    column('Status') do |warranty|
+      status_tag(warranty.active? ? 'Active' : 'Inactive', class: warranty.active? ? 'green' : 'red')
+    end
     actions
   end
 

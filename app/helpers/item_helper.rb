@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ItemHelper
   def item_attributes(object)
     object.persisted? ? disable_input : {}

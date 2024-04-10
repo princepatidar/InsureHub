@@ -11,9 +11,13 @@ ActiveAdmin.register Country do
     column :currency
     column :tax_type
     column :tax_value
-    column('Status') { |country| status_tag(country.active? ? 'Active' : 'Inactive', class: country.active? ? 'green' : 'red') }
+    column('Status') do |country|
+      status_tag(country.active? ? 'Active' : 'Inactive', class: country.active? ? 'green' : 'red')
+    end
     column :invoice_prefix
-    column('Phone Number') { |country| "#{country.country_code}#{country.phone_number}" if country.phone_number.present? }
+    column('Phone Number') do |country|
+      "#{country.country_code}#{country.phone_number}" if country.phone_number.present?
+    end
     column('Address', class: 'truncate', &:address)
     column :email
     actions

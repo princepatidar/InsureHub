@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BuildCountries
   class << self
     def call
