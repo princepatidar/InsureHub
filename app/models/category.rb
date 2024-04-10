@@ -15,14 +15,6 @@ class Category < ApplicationRecord
   has_many :items, dependent: :destroy
   accepts_nested_attributes_for :warranty_categories, update_only: true, allow_destroy: true
 
-  def self.ransackable_attributes(_auth_object = nil)
-    %w[name status country_id]
-  end
-
-  def self.ransackable_associations(_auth_object = nil)
-    ['country']
-  end
-
   def all_stores
     other_store = Store.new(id: -1, name: 'Other', country_id: country_id, category_id: id)
     stores.active.to_a.push(other_store)

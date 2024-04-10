@@ -9,14 +9,6 @@ class Country < ApplicationRecord
   has_many :stores, dependent: :destroy
   has_many :items, dependent: :destroy
 
-  def self.ransackable_attributes(_auth_object = nil)
-    %w[name currency status email]
-  end
-
-  def self.ransackable_associations(_auth_object = nil)
-    ['categories']
-  end
-
   def logo
     iso_country = ISO3166::Country.find_country_by_iso_short_name(name)
     short_country_name = iso_country.alpha2.downcase
