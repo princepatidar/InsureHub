@@ -6,7 +6,7 @@ module CountryHelper
 
     {
       as: :select,
-      collection: Country.all.pluck(:name, :id),
+      collection: Country.pluck(:name, :id),
       include_blank: 'Select Country'
     }
   end

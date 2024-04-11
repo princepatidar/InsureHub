@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Country do
-  include AttachmentHelper
   permit_params :country_name, :currency, :currency_symbol, :status, :tax_type, :tax_value, :phone_number, :address,
                 :email, :service_provider_logo, :service_provider_name, :policy_description, :invoice_prefix
 
