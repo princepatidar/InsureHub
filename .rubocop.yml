@@ -10,7 +10,7 @@ AllCops:
     - 'bin/**/*'
     - 'Gemfile'
     - 'vendor/**/*'
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.0.0
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
